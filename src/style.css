@@ -1,0 +1,103 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+
+    font-family: 'Poppins';
+}
+
+
+.content-div {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.logo-div {
+    display: flex;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+}
+
+.nav-logo {
+    padding: 20px 40px 20px 40px;
+    width: 180px;
+}
+
+.nav-grid {
+    
+    max-width: 600px;
+    height: auto;
+    align-self: center;
+}
+
+.nav-title {
+    font-size: 48px;
+    padding-block: 20px;
+}
+
+.nav-para {
+    font-size: 20px;
+}
+
+
+/* card div  */
+
+.card-div {
+    position: relative;
+    /* display: inline-block; */
+    width: auto;
+    /* padding-right: 20px; */
+}
+
+.card-img {
+    border-radius: 15px;
+    width: 250px;
+}
+
+
+.card-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.star-img{
+    height: 14px;
+    padding-right: 5px;
+}
+
+.rating-div {
+    display: flex;
+    align-items: center;
+}
+
+.gray {
+    color: lightslategray;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.cards-div {
+    padding-left: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    
+}
+
+.card-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: rgb(255, 255, 255);
+    padding: 5px 7px;
+    border-radius: 5px;
+    font-weight: bold;
+}
