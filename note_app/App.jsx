@@ -11,9 +11,7 @@ export default function App() {
     
     const [notes, setNotes] = React.useState([])
     const [currentNoteId, setCurrentNoteId] = React.useState("")
-
-
-    console.log(currentNoteId)
+    const [tempNoteText, setTempNoteText] = React.useState("")
 
     const currentNote = 
         notes.find(note => note.id === currentNoteId) 
@@ -39,6 +37,24 @@ export default function App() {
         }
     }, [notes])
 
+    React.useEffect(()=> {
+        if(currentNote)
+            setTempNoteText(currentNote.body)
+    }, [currentNote])
+
+
+    React.useEffect(()=> {
+
+        const timeoutId = setTimeout(()=> {
+            if(tempNoteText !== currentNote.body) {
+                console.log("updating")
+                updateNote(tempNoteText)
+            }
+        }, 500)
+
+        return ()=> clearTimeout(timeoutId)
+    }, [tempNoteText])
+
     async function createNewNote() {
         const newNote = {
             body: "# Type your markdown note's title here",
@@ -49,6 +65,7 @@ export default function App() {
         setCurrentNoteId(newNoteRef.id)
     }
 
+  
     async function updateNote(text) {
         const docRef = doc(db, "notes", currentNoteId)
         // merge: update only body instead of overwriting the whole doc
@@ -79,8 +96,8 @@ export default function App() {
                         />
             
                             <Editor
-                                currentNote={currentNote}
-                                updateNote={updateNote}
+                                currentNote={tempNoteText}
+                                updateNote={setTempNoteText}
                             />
                     </Split>
                     :
