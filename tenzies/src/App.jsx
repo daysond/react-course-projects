@@ -27,6 +27,7 @@ function App() {
           d:
          {...d, value: generateRandomInt()}
            }))
+    setNumRoll(old=>old+1)
   }
 
   function holdDice(id) {
@@ -39,10 +40,12 @@ function App() {
   function resetGame() {
     setDiceValues(allNewDice)
     setTenzies(false)
+    setNumRoll(0)
   }
 
   const [diceValues, setDiceValues] = useState(allNewDice)
   const [tenzies, setTenzies] = useState(false)
+  const [numRoll, setNumRoll] = useState(0)
 
   useEffect(()=>{
 
@@ -75,6 +78,7 @@ function App() {
         <div className='dices-grid'>
           {dice}
         </div>
+        <p className='num-roll'>Rolls: {numRoll}</p>
         <button className='roll-btn' onClick={tenzies ? resetGame : reroll}>{tenzies ? "New Game" : "ROLL"}</button>
       </div>
     </main>
