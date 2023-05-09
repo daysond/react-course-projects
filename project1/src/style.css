@@ -1,0 +1,64 @@
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    /* color: red; */
+    background-color: #111111;
+}
+
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    background-color: #12222A;
+    color: #61DAF8;
+    padding: 30px 25px;
+    height: 90px;
+}
+
+.logo-text{
+    margin-right: auto;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.nav-bar > h4{
+    font-weight: 600;
+}
+
+.nav-bar > img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.main-div {
+    margin: 0px;
+    color: whitesmoke;
+    padding: 40px;
+    background-image: url('./assets/react.svg');
+    background-repeat: no-repeat;
+    background-size: 300px;
+    background-position-x: right 10%;
+    background-position-y:75%;
+
+}
+
+.main-title {
+    font-size: 48px;
+    letter-spacing: -3px;
+}
+
+.main-facts {
+    margin-top: 40px;
+}
+
+li {
+    padding-block: 15px;
+    font-size: 24px;
+    max-width: 700px;
+}
+
+li::marker {
+    color: #61DAF8;
+    font-size: 28px;
+}
